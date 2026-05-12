@@ -1,0 +1,579 @@
+[2026-05-12 13:39:07] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 13:39:07] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 13:39:07] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 13:39:07] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 13:39:07] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 13:39:07] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 13:39:07] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 13:39:07] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 13:39:07] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 13:39:07] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 13:39:07] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 13:39:07] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 13:39:07] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 13:39:07] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 13:39:07] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 13:39:07] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 13:39:07] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 13:39:07] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 13:39:07] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 13:39:07] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:39:07] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 13:39:07] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 13:39:07] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 13:39:07] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 13:39:07] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 13:39:07] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 13:39:07] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 13:39:07] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 13:39:07] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 13:39:07] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:39:07] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 13:39:07] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:39:07] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 13:39:07] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 13:39:07] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 13:39:07] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 13:39:07] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 13:39:07] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 13:39:07] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 13:40:15] [INFO] Cliente registrado: Kevin (kevinerazo@gmial.com)
+[2026-05-12 13:41:38] [INFO] Cliente registrado: pedro (pedro@gmail.com)
+[2026-05-12 13:42:36] [INFO] Reserva #22 confirmada. Costo: $182,000
+[2026-05-12 13:42:36] [DEBUG] Proceso de confirmación de reserva #22 finalizado
+[2026-05-12 13:42:36] [INFO] Reserva creada y confirmada: #22
+[2026-05-12 13:42:36] [DEBUG] Proceso de reserva para Kevin finalizado
+[2026-05-12 13:42:50] [ERROR] Error cancelando reserva #15 | Excepción: ReservaError: [ERR_RESERVA] Reserva #15 - Error en reserva: La reserva ya estaba cancelada
+[2026-05-12 13:42:53] [ERROR] Error cancelando reserva #15 | Excepción: ReservaError: [ERR_RESERVA] Reserva #15 - Error en reserva: La reserva ya estaba cancelada
+[2026-05-12 13:42:58] [INFO] Reserva #22 cancelada. Motivo: Cancelada desde la interfaz
+[2026-05-12 13:48:17] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 13:48:17] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 13:48:17] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 13:48:17] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 13:48:17] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 13:48:17] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 13:48:17] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 13:48:17] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 13:48:17] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 13:48:17] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 13:48:17] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 13:48:17] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 13:48:17] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 13:48:17] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 13:48:17] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 13:48:17] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 13:48:17] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 13:48:17] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 13:48:17] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 13:48:17] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:48:17] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 13:48:17] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 13:48:17] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 13:48:17] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 13:48:17] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 13:48:17] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 13:48:17] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 13:48:17] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 13:48:17] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 13:48:17] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:48:17] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 13:48:17] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:48:17] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 13:48:17] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 13:48:17] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 13:48:17] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 13:48:17] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 13:48:17] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 13:48:17] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 13:49:22] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 13:49:22] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 13:49:22] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 13:49:22] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 13:49:22] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 13:49:22] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 13:49:22] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 13:49:22] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 13:49:22] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 13:49:22] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 13:49:22] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 13:49:22] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 13:49:22] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 13:49:22] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 13:49:22] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 13:49:22] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 13:49:22] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 13:49:22] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 13:49:22] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 13:49:22] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:49:22] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 13:49:22] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 13:49:22] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 13:49:22] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 13:49:22] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 13:49:22] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 13:49:22] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 13:49:22] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 13:49:22] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 13:49:22] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:49:22] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 13:49:22] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:49:22] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 13:49:22] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 13:49:22] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 13:49:22] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 13:49:22] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 13:49:22] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 13:49:22] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 13:50:18] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 13:50:18] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 13:50:18] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 13:50:18] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 13:50:18] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 13:50:18] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 13:50:18] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 13:50:18] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 13:50:18] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 13:50:18] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 13:50:18] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 13:50:18] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 13:50:18] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 13:50:18] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 13:50:18] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 13:50:18] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 13:50:18] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 13:50:18] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 13:50:18] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 13:50:18] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:50:18] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 13:50:18] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 13:50:18] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 13:50:18] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 13:50:18] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 13:50:18] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 13:50:18] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 13:50:18] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 13:50:18] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 13:50:18] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:50:18] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 13:50:18] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:50:18] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 13:50:18] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 13:50:18] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 13:50:18] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 13:50:18] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 13:50:18] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 13:50:18] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 13:57:48] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 13:57:48] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 13:57:48] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 13:57:48] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 13:57:48] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 13:57:48] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 13:57:48] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 13:57:48] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 13:57:48] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 13:57:48] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 13:57:48] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 13:57:48] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 13:57:48] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 13:57:48] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 13:57:48] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 13:57:48] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 13:57:48] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 13:57:48] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 13:57:48] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 13:57:48] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:57:48] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 13:57:48] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 13:57:48] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 13:57:48] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 13:57:48] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 13:57:48] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 13:57:48] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 13:57:48] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 13:57:48] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 13:57:48] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:57:48] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 13:57:48] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:57:48] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 13:57:48] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 13:57:48] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 13:57:48] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 13:57:48] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 13:57:48] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 13:57:48] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 14:47:13] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 14:47:13] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 14:47:13] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 14:47:13] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 14:47:13] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 14:47:13] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 14:47:13] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 14:47:13] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 14:47:13] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 14:47:13] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 14:47:13] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 14:47:13] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 14:47:13] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 14:47:13] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 14:47:13] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 14:47:13] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 14:47:13] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 14:47:13] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 14:47:13] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 14:47:13] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 14:47:13] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 14:47:13] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 14:47:13] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 14:47:13] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 14:47:13] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 14:47:13] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 14:47:13] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 14:47:13] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 14:47:13] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 14:47:13] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 14:47:13] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 14:47:13] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 14:47:13] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 14:47:13] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 14:47:13] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 14:47:13] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 14:47:13] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 14:47:13] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 14:47:13] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 14:53:41] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 14:53:41] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 14:53:41] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 14:53:41] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 14:53:41] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 14:53:41] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 14:53:41] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 14:53:41] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 14:53:41] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 14:53:41] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 14:53:41] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 14:53:41] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 14:53:41] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 14:53:41] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 14:53:41] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 14:53:41] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 14:53:41] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 14:53:41] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 14:53:41] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 14:53:41] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 14:53:41] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 14:53:41] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 14:53:41] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 14:53:41] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 14:53:41] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 14:53:41] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 14:53:41] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 14:53:41] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 14:53:41] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 14:53:41] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 14:53:41] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 14:53:41] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 14:53:41] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 14:53:41] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 14:53:41] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 14:53:41] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 14:53:41] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 14:53:41] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 14:53:41] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 15:06:19] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 15:06:19] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 15:06:19] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 15:06:19] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 15:06:19] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 15:06:19] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 15:06:19] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 15:06:19] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 15:06:19] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 15:06:19] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 15:06:19] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 15:06:19] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 15:06:19] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 15:06:19] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 15:06:19] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 15:06:19] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 15:06:19] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 15:06:19] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 15:06:19] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 15:06:19] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 15:06:19] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 15:06:19] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 15:06:19] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 15:06:19] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 15:06:19] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 15:06:19] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 15:06:19] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 15:06:19] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 15:06:19] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 15:06:19] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 15:06:19] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 15:06:19] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 15:06:19] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 15:06:19] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 15:06:19] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 15:06:19] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 15:06:19] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 15:06:19] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 15:06:19] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 15:07:09] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 15:07:09] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 15:07:09] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 15:07:09] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 15:07:09] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 15:07:09] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 15:07:09] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 15:07:09] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 15:07:09] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 15:07:09] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 15:07:09] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 15:07:09] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 15:07:09] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 15:07:09] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 15:07:09] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 15:07:09] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 15:07:09] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 15:07:09] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 15:07:09] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 15:07:09] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 15:07:09] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 15:07:09] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 15:07:09] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 15:07:09] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 15:07:09] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 15:07:09] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 15:07:09] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 15:07:09] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 15:07:09] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 15:07:09] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 15:07:09] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 15:07:09] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 15:07:09] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 15:07:09] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 15:07:09] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 15:07:09] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 15:07:09] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 15:07:09] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 15:07:10] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===
+[2026-05-12 15:13:39] [SISTEMA] Sistema Software FJ iniciado correctamente
+[2026-05-12 15:13:39] [INFO] Sistema de Gestión Software FJ inicializado
+[2026-05-12 15:13:39] [INFO] === INICIO DE SIMULACIÓN DE OPERACIONES DE DEMOSTRACIÓN ===
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 1: Registrando servicios válidos
+[2026-05-12 15:13:39] [INFO] Servicio agregado: Sala Innovación A (Reserva de Sala)
+[2026-05-12 15:13:39] [INFO] Servicio agregado: Sala Creatividad B (Reserva de Sala)
+[2026-05-12 15:13:39] [INFO] Servicio agregado: Laptop Dell XPS (Alquiler de Equipo)
+[2026-05-12 15:13:39] [INFO] Servicio agregado: Proyector Epson 4K (Alquiler de Equipo)
+[2026-05-12 15:13:39] [INFO] Servicio agregado: Consultoría en Cloud (Asesoría Especializada)
+[2026-05-12 15:13:39] [INFO] Servicio agregado: Scrum y Agile (Asesoría Especializada)
+[2026-05-12 15:13:39] [INFO] ✅ Servicios registrados correctamente
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 2: Registrando clientes válidos
+[2026-05-12 15:13:39] [INFO] Cliente registrado: Ana García López (ana.garcia@techcorp.com)
+[2026-05-12 15:13:39] [INFO] Cliente registrado: Carlos Mendoza (cmendoza@startup.io)
+[2026-05-12 15:13:39] [INFO] Cliente registrado: María Fernández (mfernandez@gmail.com)
+[2026-05-12 15:13:39] [INFO] ✅ Clientes registrados correctamente
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 3: Intentando registrar cliente con email inválido (debe fallar)
+[2026-05-12 15:13:39] [ERROR] Error registrando cliente 'Pedro Inválido' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error capturado correctamente: [ERR_CLIENTE] Dato inválido en campo 'email': 'esto-no-es-email'. Formato de email inválido (use: usuario@dominio.com)
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 4: Intentando registrar cliente con teléfono inválido
+[2026-05-12 15:13:39] [ERROR] Error registrando cliente 'Luis Error' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de teléfono capturado: [ERR_CLIENTE] Dato inválido en campo 'telefono': 'abc123'. El teléfono solo puede contener números
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 5: Intentando crear servicio con precio negativo (debe fallar)
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de precio negativo capturado: [ERR_SERVICIO] Servicio inválido 'Sala Gratis': El precio base debe ser positivo, se recibió: -5000
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 6: Creando reservas válidas
+[2026-05-12 15:13:39] [INFO] Reserva #13 confirmada. Costo: $240,000
+[2026-05-12 15:13:39] [DEBUG] Proceso de confirmación de reserva #13 finalizado
+[2026-05-12 15:13:39] [INFO] Reserva creada y confirmada: #13
+[2026-05-12 15:13:39] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 15:13:39] [INFO] Reserva #14 confirmada. Costo: $91,000
+[2026-05-12 15:13:39] [DEBUG] Proceso de confirmación de reserva #14 finalizado
+[2026-05-12 15:13:39] [INFO] Reserva creada y confirmada: #14
+[2026-05-12 15:13:39] [DEBUG] Proceso de reserva para Carlos Mendoza finalizado
+[2026-05-12 15:13:39] [INFO] Reserva #15 confirmada. Costo: $480,000
+[2026-05-12 15:13:39] [DEBUG] Proceso de confirmación de reserva #15 finalizado
+[2026-05-12 15:13:39] [INFO] Reserva creada y confirmada: #15
+[2026-05-12 15:13:39] [DEBUG] Proceso de reserva para María Fernández finalizado
+[2026-05-12 15:13:39] [INFO] ✅ Reservas creadas correctamente
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 7: Intentando reserva con duración inválida (debe fallar)
+[2026-05-12 15:13:39] [ERROR] Servicio inválido durante reserva | Excepción: ServicioInvalidoError: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 15:13:39] [DEBUG] Proceso de reserva para Ana García López finalizado
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de duración capturado: [ERR_RESERVA] Error en reserva: Problema con el servicio: [ERR_SERVICIO] Servicio inválido 'Sala Innovación A': La duración máxima es 8 horas por reserva
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 8: Intentando reserva con cliente inexistente (debe fallar)
+[2026-05-12 15:13:39] [ERROR] Error en proceso de reserva | Excepción: ReservaError: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 15:13:39] [DEBUG] Proceso de reserva para ID:9999 finalizado
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de cliente inexistente capturado: [ERR_RESERVA] Error en reserva: Cliente con ID 9999 no encontrado en el sistema
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 9: Intentando registrar cliente con email duplicado
+[2026-05-12 15:13:39] [ERROR] Error registrando cliente 'Ana Copia' | Excepción: ClienteInvalidoError: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de email duplicado capturado: [ERR_CLIENTE] Dato inválido en campo 'email': 'ana.garcia@techcorp.com'. Ya existe un cliente con este email
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 10: Cancelando una reserva existente
+[2026-05-12 15:13:39] [INFO] Reserva #15 cancelada. Motivo: Cliente solicita cambio de fecha
+[2026-05-12 15:13:39] [INFO] ✅ Reserva cancelada correctamente
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 11: Creando asesoría con nivel inválido (debe fallar)
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de nivel inválido capturado: [ERR_SERVICIO] Servicio inválido 'Asesoría Ninja': Nivel inválido: 'ninja'. Debe ser uno de: basico, intermedio, avanzado, experto
+[2026-05-12 15:13:39] [INFO] OPERACIÓN 12: Sala con capacidad cero (debe fallar)
+[2026-05-12 15:13:39] [ADVERTENCIA] ✅ Error de capacidad capturado: [ERR_SERVICIO] Servicio inválido 'Sala Fantasma': La capacidad debe ser mayor a 0, se recibió: 0
+[2026-05-12 15:13:39] [INFO] === FIN DE SIMULACIÓN: 12 OPERACIONES COMPLETADAS ===

@@ -1,0 +1,78 @@
+[2026-05-12 13:49:50] [EVENTO] === INICIO DEL SISTEMA SOFTWARE FJ ===
+[2026-05-12 13:49:50] [EVENTO] Cliente registrado: CC-1001 - Ana Martínez
+[2026-05-12 13:49:50] [EVENTO] Cliente registrado: NIT-9002 - TechCorp SAS
+[2026-05-12 13:49:50] [ERROR] Intento de registro duplicado: CC-1001
+[2026-05-12 13:49:50] [EVENTO] Cliente registrado: CC-2050 - Carlos Ruiz
+[2026-05-12 13:49:50] [EVENTO] Servicio agregado: SALA-A1 - Sala Ejecutiva A
+[2026-05-12 13:49:50] [EVENTO] Servicio agregado: EQ-L01 - Laptop HP ProBook
+[2026-05-12 13:49:50] [EVENTO] Servicio agregado: ASE-001 - Consultoría en Ciberseguridad
+[2026-05-12 13:49:50] [EVENTO] Reserva C63EE2DD creada | Cliente: CC-1001 | Servicio: SALA-A1 | Horas: 3.0
+[2026-05-12 13:49:50] [EVENTO] Reserva C63EE2DD: PENDIENTE → CONFIRMADA | confirmación manual
+[2026-05-12 13:49:50] [INFO] Reserva C63EE2DD confirmada | Total: $298,452.00
+[2026-05-12 13:49:50] [INFO] Proceso de confirmación de reserva C63EE2DD finalizado
+[2026-05-12 13:49:50] [EVENTO] Reserva 4ED429BC creada | Cliente: NIT-9002 | Servicio: EQ-L01 | Horas: 10.0
+[2026-05-12 13:49:50] [EVENTO] Reserva 4ED429BC: PENDIENTE → CONFIRMADA | confirmación manual
+[2026-05-12 13:49:50] [INFO] Reserva 4ED429BC confirmada | Total: $306,425.00
+[2026-05-12 13:49:50] [INFO] Proceso de confirmación de reserva 4ED429BC finalizado
+[2026-05-12 13:49:50] [EVENTO] Reserva 4ED429BC: CONFIRMADA → PROCESADA | servicio entregado
+[2026-05-12 13:49:50] [INFO] Intento de procesamiento de reserva 4ED429BC completado
+[2026-05-12 13:49:50] [EVENTO] Reserva FC8B4F22 creada | Cliente: CC-2050 | Servicio: ASE-001 | Horas: 2.0
+[2026-05-12 13:49:50] [EVENTO] Reserva FC8B4F22: PENDIENTE → CONFIRMADA | confirmación manual
+[2026-05-12 13:49:50] [INFO] Reserva FC8B4F22 confirmada | Total: $714,000.00
+[2026-05-12 13:49:50] [INFO] Proceso de confirmación de reserva FC8B4F22 finalizado
+[2026-05-12 13:49:50] [ERROR] Error al crear reserva: [ERR_RESERVA_DURACION] Duración '15.0h' fuera del rango permitido [0h – 99h].
+  TRAZA: Traceback (most recent call last):
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 985, in __init__
+    servicio.validar_parametros(horas, **parametros_servicio)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 717, in validar_parametros
+    raise ParametroServicioInvalidoError(
+    ...<2 lines>...
+    )
+ParametroServicioInvalidoError: [ERR_SERVICIO_PARAMETRO] Parámetro inválido 'horas': para sala debe estar entre 1.0h y 8.0h.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 1184, in crear
+    reserva = Reserva(cliente, servicio, horas, notas, **params)
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 988, in __init__
+    raise DuracionInvalidaError(horas, 0, 99) from e
+DuracionInvalidaError: [ERR_RESERVA_DURACION] Duración '15.0h' fuera del rango permitido [0h – 99h].
+[2026-05-12 13:49:50] [INFO] Servicio 'Sala Ejecutiva A' disponibilidad → False
+[2026-05-12 13:49:50] [ERROR] Error al crear reserva: [ERR_SERVICIO_NO_DISPONIBLE] El servicio 'Sala Ejecutiva A' no está disponible actualmente.
+  TRAZA: Traceback (most recent call last):
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 1184, in crear
+    reserva = Reserva(cliente, servicio, horas, notas, **params)
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 982, in __init__
+    raise ServicioNoDisponibleError(servicio.nombre)
+ServicioNoDisponibleError: [ERR_SERVICIO_NO_DISPONIBLE] El servicio 'Sala Ejecutiva A' no está disponible actualmente.
+[2026-05-12 13:49:50] [INFO] Servicio 'Sala Ejecutiva A' disponibilidad → True
+[2026-05-12 13:49:50] [EVENTO] Reserva C63EE2DD: CONFIRMADA → CANCELADA | Cliente solicitó reprogramación
+[2026-05-12 13:49:50] [EVENTO] Reserva C63EE2DD cancelada: Cliente solicitó reprogramación
+[2026-05-12 13:49:50] [ERROR] No se pudo confirmar reserva C63EE2DD: [ERR_RESERVA_OPERACION] Operación 'CONFIRMADA' no permitida en estado 'CANCELADA'.
+[2026-05-12 13:49:50] [INFO] Proceso de confirmación de reserva C63EE2DD finalizado
+[2026-05-12 13:49:50] [ERROR] Error al crear reserva: [ERR_RESERVA_DURACION] Duración '2.0h' fuera del rango permitido [0h – 99h].
+  TRAZA: Traceback (most recent call last):
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 985, in __init__
+    servicio.validar_parametros(horas, **parametros_servicio)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 726, in validar_parametros
+    raise ParametroServicioInvalidoError(
+    ...<2 lines>...
+    )
+ParametroServicioInvalidoError: [ERR_SERVICIO_PARAMETRO] Parámetro inválido 'num_asistentes': excede la capacidad máxima de 10 personas.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 1184, in crear
+    reserva = Reserva(cliente, servicio, horas, notas, **params)
+  File "c:\Users\kevin\Downloads\Programacion\Software FJ\main.py", line 988, in __init__
+    raise DuracionInvalidaError(horas, 0, 99) from e
+DuracionInvalidaError: [ERR_RESERVA_DURACION] Duración '2.0h' fuera del rango permitido [0h – 99h].
+[2026-05-12 13:49:50] [EVENTO] Reserva BCF57F7C creada | Cliente: CC-2050 | Servicio: ASE-001 | Horas: 1.0
+[2026-05-12 13:49:50] [EVENTO] Reserva BCF57F7C: PENDIENTE → CONFIRMADA | confirmación manual
+[2026-05-12 13:49:50] [ERROR] Error inesperado al confirmar reserva BCF57F7C: [ERR_SERVICIO_PARAMETRO] Parámetro inválido 'descuento': debe estar entre 0.0 y 0.99, recibido 1.5.
+[2026-05-12 13:49:50] [INFO] Proceso de confirmación de reserva BCF57F7C finalizado
+[2026-05-12 13:49:50] [EVENTO] === SISTEMA FINALIZADO SIN INTERRUPCIONES ===
